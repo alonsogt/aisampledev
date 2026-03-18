@@ -3,7 +3,7 @@ from typing import Any, Dict, List
 
 def ingest(source_items: List[Dict[str, Any]], index_name: str = "ebooks_index") -> Dict[str, Any]:
     """
-    Contract (see contracts/ingestion/ingest_ebooks.md):
+    Contract (see contracts/ingest_ebooks.md):
     - read sources
     - parse + chunk + embed
     - upsert into the retrieval index
