@@ -1,0 +1,6 @@
+{
+  "name": "create_pptx",
+  "inputs": { "outline": { "type": "object" }, "slides_data": { "type": "object" } },
+  "outputs": { "sharepoint_url": { "type": "string" } }
+}
+

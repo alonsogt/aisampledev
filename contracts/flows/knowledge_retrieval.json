@@ -1,0 +1,20 @@
+{
+  "name": "knowledge_retrieval",
+  "inputs": {
+    "query": { "type": "string" },
+    "session_id": { "type": "string" },
+    "top_k": { "type": "integer", "default": 5 }
+  },
+  "outputs": {
+    "passages": [
+      {
+        "title": "string",
+        "url": "string",
+        "snippet": "string",
+        "score": "number"
+      }
+    ],
+    "citations": { "type": "array" }
+  }
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "create_pdf",
+  "inputs": { "docx_or_pptx_url": { "type": "string" } },
+  "outputs": { "pdf_url": { "type": "string" } }
+}
+

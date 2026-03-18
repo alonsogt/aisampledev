@@ -1,0 +1,11 @@
+{
+  "name": "branch_next_step",
+  "inputs": {
+    "quality_score": { "type": "integer" },
+    "user_intent": { "type": "string" }
+  },
+  "outputs": {
+    "next_step": { "type": "string", "description": "e.g. complete|revise" }
+  }
+}
+

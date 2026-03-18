@@ -1,0 +1,9 @@
+{
+  "name": "publish_cms",
+  "inputs": {
+    "content_url": { "type": "string" },
+    "metadata": { "type": "object" }
+  },
+  "outputs": { "cms_entry_url": { "type": "string" } }
+}
+

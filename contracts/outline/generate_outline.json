@@ -1,0 +1,17 @@
+{
+  "name": "generate_outline",
+  "inputs": {
+    "topic": { "type": "string" },
+    "passages": { "type": "array" },
+    "brief": { "type": "object" }
+  },
+  "outputs": {
+    "outline": {
+      "title": "string",
+      "sections": [
+        { "heading": "string", "bullets": ["string"] }
+      ]
+    }
+  }
+}
+

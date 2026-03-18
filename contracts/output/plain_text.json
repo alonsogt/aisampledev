@@ -1,0 +1,10 @@
+{
+  "name": "plain_text",
+  "inputs": {
+    "draft_text": { "type": "string" }
+  },
+  "outputs": {
+    "final_text": { "type": "string" }
+  }
+}
+

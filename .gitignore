@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+agent-runtime-sample_output_*.txt
+agent-runtime-sample_output.pptx
+agent-runtime-sample_output.pdf
+

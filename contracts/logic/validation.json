@@ -1,0 +1,12 @@
+{
+  "name": "validate_input",
+  "inputs": {
+    "user_input": { "type": "object" },
+    "draft": { "type": "object" }
+  },
+  "outputs": {
+    "validation_flags": { "type": "array", "items": { "type": "string" } },
+    "errors": { "type": "array", "items": { "type": "string" } }
+  }
+}
+

@@ -1,0 +1,13 @@
+{
+  "name": "output_generation",
+  "inputs": {
+    "outline": { "type": "object" },
+    "draft": { "type": "object" },
+    "context": { "type": "object" }
+  },
+  "outputs": {
+    "output_url": { "type": "string" },
+    "quality_status": { "type": "string" }
+  }
+}
+

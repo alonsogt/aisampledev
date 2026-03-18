@@ -1,0 +1,2 @@
+{ "name": "welcome_screen", "inputs": { "user": "object" }, "outputs": { "intent": "string" } }
+

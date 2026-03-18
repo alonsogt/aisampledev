@@ -1,0 +1,12 @@
+{
+  "name": "fallback_on_failure",
+  "inputs": {
+    "retrieval_context": { "type": "object" },
+    "failures": { "type": "string" }
+  },
+  "outputs": {
+    "safe_response": { "type": "string" },
+    "next_actions": { "type": "array", "items": { "type": "string" } }
+  }
+}
+

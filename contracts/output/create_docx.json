@@ -1,0 +1,12 @@
+{
+  "name": "create_docx",
+  "inputs": {
+    "outline": { "type": "object" },
+    "draft": { "type": "object" },
+    "metadata": { "type": "object" }
+  },
+  "outputs": {
+    "sharepoint_url": { "type": "string", "description": "or local_file_path in v1" }
+  }
+}
+

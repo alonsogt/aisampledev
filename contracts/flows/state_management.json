@@ -1,0 +1,12 @@
+{
+  "name": "state_management",
+  "inputs": {
+    "session_id": { "type": "string" },
+    "operation": { "type": "string" },
+    "stateData": { "type": "object" }
+  },
+  "outputs": {
+    "updated_state": { "type": "object" }
+  }
+}
+

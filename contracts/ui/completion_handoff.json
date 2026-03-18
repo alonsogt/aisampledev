@@ -1,0 +1,2 @@
+{ "name": "completion_handoff", "inputs": { "doc_url": "string" }, "outputs": { "next_action": "string", "doc_url": "string" } }
+

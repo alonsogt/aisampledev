@@ -1,0 +1,19 @@
+{
+  "ebooks_index": {
+    "documents": [
+      {
+        "doc_id": "doc_001",
+        "title": "Sample Ebook Source",
+        "source_url": "file://local/sample-source",
+        "chunks": [
+          {
+            "chunk_text": "This is a sample snippet about AI governance for content teams.",
+            "chunk_no": 1,
+            "tags": ["sample", "governance"]
+          }
+        ]
+      }
+    ]
+  }
+}
+

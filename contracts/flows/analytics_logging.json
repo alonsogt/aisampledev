@@ -1,0 +1,12 @@
+{
+  "name": "analytics_logging",
+  "inputs": {
+    "session_id": { "type": "string" },
+    "tokens": { "type": "object" },
+    "quality": { "type": "string" }
+  },
+  "outputs": {
+    "stored_metrics": { "type": "object" }
+  }
+}
+

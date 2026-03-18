@@ -1,0 +1,13 @@
+{
+  "name": "session_init",
+  "inputs": {
+    "user_id": { "type": "string" },
+    "topic": { "type": "string" },
+    "persona": { "type": "string", "default": "default" }
+  },
+  "outputs": {
+    "session_id": { "type": "string" },
+    "context": { "type": "object" }
+  }
+}
+

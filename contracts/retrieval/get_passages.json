@@ -1,0 +1,18 @@
+{
+  "name": "get_passages",
+  "inputs": {
+    "query": { "type": "string" },
+    "top_k": { "type": "integer", "default": 5 }
+  },
+  "outputs": {
+    "passages": [
+      {
+        "title": "string",
+        "url": "string",
+        "snippet": "string",
+        "score": "number"
+      }
+    ]
+  }
+}
+

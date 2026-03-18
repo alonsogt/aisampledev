@@ -1,0 +1,13 @@
+{
+  "name": "score_quality",
+  "inputs": {
+    "draft_text": { "type": "string" },
+    "rubric": { "type": "object" }
+  },
+  "outputs": {
+    "score": { "type": "number" },
+    "feedback": { "type": "string" },
+    "flags": { "type": "array" }
+  }
+}
+

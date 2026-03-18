@@ -1,0 +1,2 @@
+{ "name": "component_selection", "inputs": { "topic": "string" }, "outputs": { "selected_components": ["string"] } }
+

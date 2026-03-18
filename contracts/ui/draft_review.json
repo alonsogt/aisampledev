@@ -1,0 +1,2 @@
+{ "name": "draft_review", "inputs": { "draft": "object" }, "outputs": { "action": "string", "feedback": "string" } }
+

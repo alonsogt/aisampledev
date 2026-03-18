@@ -1,0 +1,27 @@
+{
+  "name": "generate_draft",
+  "inputs": {
+    "outline": {
+      "title": "string",
+      "sections": [
+        {
+          "heading": "string",
+          "bullets": ["string"]
+        }
+      ]
+    },
+    "passages": [
+      { "title": "string", "url": "string", "snippet": "string", "score": "number" }
+    ],
+    "brief": { "what": "string", "who": "string", "never": "string", "success": "string" }
+  },
+  "outputs": {
+    "draft": {
+      "title": "string",
+      "sections": [
+        { "heading": "string", "paragraphs": ["string"] }
+      ]
+    }
+  }
+}
+
