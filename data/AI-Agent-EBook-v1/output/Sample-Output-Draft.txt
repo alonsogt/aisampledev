@@ -1,0 +1,70 @@
+SAMPLE OUTPUT — AI-GENERATED EBOOK DRAFT
+Agent: EBook Agent v1  |  Model: GPT-4o  |  Date: 2025-Q1
+Topic: AI Governance for Content Teams
+=========================================================
+
+NOTE: This is a sample output showing the expected quality and format
+of the agent's output. Use this as a quality benchmark.
+
+---
+
+TITLE: Mastering AI Governance for Content Teams: A Practical Guide
+
+CHAPTER 1: Why Content Teams Need an AI Governance Policy
+
+Most content teams adopting AI tools skip governance entirely. They move fast,
+get results, then hit a wall — a brand-damaging hallucination goes live, a
+client's confidential data gets fed into a public model, or legal flags a
+compliance issue nobody anticipated.
+
+An AI governance policy isn't bureaucracy. It's the thing that lets you move
+faster with confidence. Done right, it takes an afternoon to write and
+prevents months of damage control.
+
+This chapter shows you how to build version 1.0 of your content team's AI
+governance policy — practical, usable, and finished by end of day.
+
+THE FOUR THINGS YOUR POLICY MUST COVER
+
+A minimal viable AI governance policy for a content team covers four areas:
+
+1. Permitted use cases
+   What can AI be used for? First drafts: yes. Client quotes: no.
+   Data analysis: yes. Fabricating statistics: never.
+   Be explicit. Ambiguity is where mistakes happen.
+
+2. Data handling rules
+   What data can be fed into AI tools? Internal strategy docs: probably not.
+   Published research: yes. Client names in prompts: check your contract.
+   Map your data sensitivity levels before you write a single prompt.
+
+3. Output review requirements
+   Which outputs need human review before going live? The answer should be:
+   all of them, for now. As trust builds, you can tier your review process.
+
+4. Incident response
+   What happens when something goes wrong? Who gets notified? How fast?
+   What's the process for correcting and retracting AI-generated content?
+   Write this down before you need it.
+
+COMMON MISTAKES TO AVOID
+
+- Don't make it too long. A 40-page policy nobody reads is worse than no policy.
+  Target: 2-3 pages maximum for version 1.0.
+- Don't make it permanent. Schedule a quarterly review from day one.
+- Don't write it in isolation. Include one person from legal, one from the
+  team actually using the tools.
+
+KEY TAKEAWAYS
+- Write your AI governance policy before you scale AI adoption, not after.
+- Cover four areas: permitted uses, data handling, review requirements, incident response.
+- Keep version 1.0 to 2-3 pages. Iterate from there.
+- Assign a named owner responsible for keeping it current.
+- Review quarterly — AI tools and risks evolve faster than annual review cycles.
+
+---
+[END OF SAMPLE OUTPUT]
+
+Quality benchmark: this output should be the minimum acceptable quality.
+If agent output is significantly below this level, review the prompt configuration
+and grounding source quality before running in production.

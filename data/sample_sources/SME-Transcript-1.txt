@@ -1,0 +1,58 @@
+SME INTERVIEW TRANSCRIPT
+Subject: AI Content Strategy for Professional Services Firms
+Interviewer: Bridge Partners Research Team
+Subject Matter Expert: Director of Content, Global Consulting Firm (anonymized)
+Date: January 2025
+=================================================================================
+
+INTERVIEWER: Tell us about where your content team was before you started using AI.
+
+SME: We had a team of twelve writers producing content for six service lines.
+Everything was bespoke — every white paper, every case study, every blog post
+written from scratch. We were slow, expensive, and inconsistent. The same topic
+could be covered in completely different tones by two different writers.
+
+INTERVIEWER: What was the first thing you changed?
+
+SME: We built a prompt library before we touched any AI tool. That sounds boring,
+but it was the most important thing we did. We documented exactly what good looked
+like for each content type — white paper, case study, social post, email — with
+examples of our best and worst work. That became the foundation for every prompt
+we wrote.
+
+INTERVIEWER: How long did that take?
+
+SME: About three weeks for the first version. We've been refining it ever since.
+It's now our most valuable internal document. New writers learn our voice faster
+from the prompt library than from any other onboarding material.
+
+INTERVIEWER: What were the early failures?
+
+SME: We tried to use AI for case studies first. That was a mistake. Case studies
+need specific client details, specific outcomes, specific quotes. AI kept making
+things up or being too generic. We pulled back and started with thought leadership
+instead, where the ideas matter more than the specifics.
+
+INTERVIEWER: What does your workflow look like now?
+
+SME: A strategist writes a brief — about 400 words covering the audience, the
+key argument, the three supporting points, the tone, and the CTA. That brief
+goes to the AI, which produces a 1,500-word draft in about 90 seconds. A senior
+editor spends 30–45 minutes revising. We fact-check anything specific. Then
+it goes to the subject matter expert for a final 15-minute review.
+
+Total time per piece: about two hours versus eight hours before.
+
+INTERVIEWER: What do your writers think?
+
+SME: Mixed at first. Some felt threatened. But once they saw that their job
+became about strategy and quality — not typing — most came around. We actually
+promoted two writers to "AI Content Strategist" roles. They now own the prompt
+library and train the rest of the team. It became a career opportunity.
+
+INTERVIEWER: What's the single most important piece of advice you'd give?
+
+SME: Don't start with the tool. Start with the brief. If you can't write a
+good brief, AI will produce mediocre content at scale. If you can write a
+great brief, AI will produce great content at scale. The brief is the leverage.
+The AI is just the multiplier.

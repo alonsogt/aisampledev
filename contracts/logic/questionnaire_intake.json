@@ -1,0 +1,16 @@
+{
+  "name": "questionnaire_intake",
+  "inputs": {
+    "answers": {
+      "type": "object",
+      "description": "User questionnaire answers/options (questionCount, style, tone, audience, structureOptions[])"
+    }
+  },
+  "outputs": {
+    "preferences": {
+      "type": "object",
+      "description": "Normalized preferences used for outline/draft generation"
+    }
+  }
+}
+

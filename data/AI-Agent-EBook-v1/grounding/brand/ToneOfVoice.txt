@@ -1,0 +1,39 @@
+BRIDGE PARTNERS — TONE OF VOICE GUIDE
+======================================
+
+CORE PERSONALITY
+----------------
+Bridge Partners sounds like a trusted senior colleague — not a vendor, not a
+consultant reciting a slide deck. We are direct, warm, and substantive.
+
+THE THREE PILLARS OF OUR VOICE
+
+1. CONFIDENT — NOT ARROGANT
+We state positions clearly. We don't hedge with "it could be argued" or
+"some might say." We say what we believe and back it up.
+  ✓ "The most effective AI governance programs start with use case selection."
+  ✗ "One approach that some organizations have found useful may be to consider..."
+
+2. HUMAN — NOT CORPORATE
+We write the way a smart person talks. Contractions are fine. Short sentences
+are fine. Starting a sentence with "And" or "But" is fine.
+  ✓ "It doesn't have to be complicated. Start with one use case."
+  ✗ "It is not necessary to implement a complex solution at the outset."
+
+3. PRACTICAL — NOT THEORETICAL
+Every point we make should connect to a real action the reader can take.
+If we can't say "so what do I do with this," cut it or rewrite it.
+  ✓ "Run a 2-hour data audit before your next AI vendor call. Use our template."
+  ✗ "Data quality is an important consideration in AI implementation contexts."
+
+WHAT WE NEVER SOUND LIKE
+-------------------------
+- A press release: no passive voice, no "pleased to announce"
+- A legal document: no jargon walls, no "pursuant to"
+- A motivational poster: no "unlock your potential," no "transform your business"
+- A textbook: no definitions nobody asked for, no history lessons without payoff
+
+READING LEVEL TARGET
+--------------------
+Grade 10–12 reading level. Use the Hemingway App to check.
+Short words beat long words. Short sentences beat long sentences.

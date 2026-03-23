@@ -1,0 +1,54 @@
+EBOOK CHAPTER TEMPLATE — BRIDGE PARTNERS STANDARD
+===================================================
+
+USE THIS STRUCTURE FOR EVERY CHAPTER
+--------------------------------------
+
+[CHAPTER TITLE]
+Action-oriented or question-based. 6–10 words max.
+Example: "How to Build an AI Governance Policy in a Day"
+
+[OPENING HOOK — 2-3 sentences]
+Start with a story, a surprising statistic, or a bold claim.
+Do NOT start with a definition. Do NOT start with "In today's world..."
+Example: "Most AI governance policies take six months to write and never get used.
+Here's how one team wrote one that actually works — in an afternoon."
+
+[SECTION 1: THE PROBLEM / CONTEXT]
+What challenge does this chapter address?
+Keep it to 2-3 paragraphs. Be specific. Use real numbers if available.
+
+[SECTION 2: THE FRAMEWORK / APPROACH]
+What is the Bridge Partners recommended approach?
+Use a numbered list, a 2x2 matrix, or a step-by-step breakdown.
+Maximum 5 steps or items. More than 5 = split into two sections.
+
+[SECTION 3: HOW TO APPLY IT]
+Walk the reader through applying the framework to their situation.
+Include at least one concrete example (real or composite/anonymized).
+Use second person: "your team," "your data," "your use case."
+
+[SECTION 4: COMMON MISTAKES]
+2-3 bullets on what to avoid. Keep it punchy.
+Format: "Don't [action] — [why it backfires]."
+
+[KEY TAKEAWAYS BOX]
+3-5 bullets. Start each with a verb.
+These should be the most actionable points from the chapter.
+Example:
+- Audit your data before buying AI tools.
+- Write your governance policy for one use case first, not all use cases.
+- Assign a named owner to every AI system you deploy.
+
+[BRIDGE TO NEXT CHAPTER — 1 sentence]
+Forward-looking. What will the next chapter help them do?
+Example: "Now that your governance foundation is in place, Chapter 4 shows
+you how to select the right AI model for your first use case."
+
+---
+WORD COUNT TARGETS BY CHAPTER POSITION
+----------------------------------------
+Opening chapter:     1,200 – 1,500 words
+Middle chapters:     1,500 – 2,000 words
+Closing chapter:     800  – 1,200 words
+Total ebook target:  8,000 – 12,000 words (6-8 chapters)

@@ -1,0 +1,61 @@
+E-BOOK EXAMPLE: "The Modern AI Stack for Mid-Market Companies"
+CLIENT: TechForward Corp  |  AUDIENCE: CTOs and IT Directors  |  LENGTH: 8 chapters
+====================================================================================
+
+CHAPTER 1: Why Your AI Strategy Starts with Data, Not Models
+-------------------------------------------------------------
+Three years ago, TechForward's CTO told us she had a problem. Her team had spent
+$400,000 on an AI platform and gotten almost nothing useful out of it. The models
+were fine. The data was a disaster.
+
+This is the most common mistake mid-market companies make when starting their AI
+journey: they buy the brain before they've built the nervous system.
+
+In this chapter, we'll show you how to audit your data readiness in one afternoon
+and create a 90-day roadmap to fix the gaps that matter most.
+
+Key Takeaways:
+- AI success is 80% data quality and 20% model quality.
+- A data audit takes one afternoon, not three months.
+- Fix data pipelines before buying AI platforms.
+- The "good enough" data threshold is lower than most teams think.
+- Start with one high-value use case, not a platform-wide rollout.
+
+CHAPTER 2: Choosing the Right Model for Your Use Case
+------------------------------------------------------
+Not every problem needs GPT-4. In fact, for most structured business tasks —
+classification, extraction, routing — a smaller, faster, cheaper model will
+outperform a large foundation model on your specific data.
+
+The key is matching model complexity to task complexity.
+
+We use a simple 2x2 matrix: task complexity (low/high) vs. data availability
+(low/high). Each quadrant points to a different model strategy.
+
+Low complexity + high data: fine-tune a small model. Fast, cheap, accurate.
+High complexity + low data: use a large foundation model with few-shot prompting.
+Low complexity + low data: rules-based system first. Add AI later.
+High complexity + high data: full fine-tuning or RAG pipeline.
+
+Key Takeaways:
+- Match model size to task complexity, not to budget.
+- Fine-tuned small models beat large models on narrow tasks.
+- RAG (retrieval-augmented generation) is the sweet spot for most enterprise use cases.
+- Always benchmark on your own data before committing to a model.
+
+CHAPTER 3: Building Your AI Governance Policy
+----------------------------------------------
+The companies that will win with AI in the next five years are not the ones
+moving fastest. They are the ones moving fastest within guardrails.
+
+An AI governance policy does not slow you down. Done right, it is the thing
+that lets your team move faster — because every decision doesn't need to go
+through a committee.
+
+A minimal viable governance policy covers four areas:
+1. Permitted use cases (what AI can be used for)
+2. Data handling rules (what data can be fed into AI systems)
+3. Output review requirements (which outputs need human review before action)
+4. Incident response (what happens when something goes wrong)
+
+You can write version 1.0 in an afternoon. We'll show you how.

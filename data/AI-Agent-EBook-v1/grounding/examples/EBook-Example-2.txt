@@ -1,0 +1,85 @@
+E-BOOK EXAMPLE: "AI for Content Teams: A Practical Playbook"
+CLIENT: Meridian Media  |  AUDIENCE: Content Managers, Editors, Marketing Leads
+================================================================================
+
+INTRODUCTION
+------------
+Content teams are under more pressure than ever. More channels, faster deadlines,
+smaller budgets, and now — AI tools that promise to do everything but often
+create more chaos than they solve.
+
+This playbook is different. We won't tell you AI will replace your writers.
+It won't. But it will change what your best writers spend their time on —
+if you implement it right.
+
+We've worked with 40+ content teams over the past two years. Here's what
+actually works.
+
+CHAPTER 1: The Content Team's AI Adoption Ladder
+-------------------------------------------------
+Most teams try to adopt AI all at once. That's why most teams fail.
+
+The Content Team AI Adoption Ladder has five rungs:
+
+Rung 1 — AI-Assisted Research
+Writers use AI to gather background, summarize sources, and identify gaps.
+No output goes live without full human rewrite. Time savings: 30%.
+
+Rung 2 — AI-Assisted First Drafts
+AI generates a rough draft from a detailed brief. Writers edit, restructure,
+and rewrite substantially. Time savings: 40%.
+
+Rung 3 — AI-Assisted Personalization
+AI adapts approved content for different audiences, channels, or geographies.
+Human review for tone and accuracy. Time savings: 60%.
+
+Rung 4 — AI-Managed Workflows
+AI routes tasks, flags issues, suggests priorities, and tracks deadlines.
+Humans focus on creative and strategic decisions. Time savings: 25% overhead reduction.
+
+Rung 5 — AI-Augmented Strategy
+AI analyzes performance data and suggests content strategy adjustments.
+Humans make final calls on direction and brand.
+
+Most teams should spend 6–12 months on rungs 1 and 2 before moving higher.
+
+CHAPTER 2: Writing Prompts That Actually Work
+---------------------------------------------
+The quality of your AI output is determined almost entirely by the quality
+of your prompt. This is the skill your team needs to develop most urgently.
+
+A good content prompt has five components:
+1. Role: "You are a senior B2B content strategist..."
+2. Context: "...writing for an audience of IT directors at mid-market companies..."
+3. Task: "...create a 600-word thought leadership article on zero-trust security..."
+4. Constraints: "...in a confident, direct tone. No jargon. No passive voice."
+5. Format: "...with an H1, three H2 sections, and a 3-bullet summary at the end."
+
+Without all five components, you are guessing. With all five, you are directing.
+
+CHAPTER 3: Quality Control for AI-Generated Content
+----------------------------------------------------
+The biggest risk with AI content is not that it will be obviously bad.
+It's that it will be plausibly wrong — confident-sounding claims that are
+subtly inaccurate or off-brand.
+
+Your quality control process needs three gates:
+
+Gate 1 — Fact Check
+Every specific claim, statistic, or named example must be verified by a human.
+AI hallucinates. Build in time for fact-checking.
+
+Gate 2 — Brand Voice Check
+Read every paragraph aloud. Does it sound like your brand? Fix anything that sounds
+corporate, hedging, or generic.
+
+Gate 3 — Strategic Alignment Check
+Does this piece serve a strategic purpose? Is the call-to-action clear?
+Does it fit the content calendar? Don't publish AI content just because it's fast.
+
+Key Takeaways:
+- Adopt AI in stages, not all at once.
+- Prompt quality determines output quality.
+- AI content needs three quality gates before publishing.
+- The best AI content teams have a dedicated prompt library.
+- Measure AI content performance the same way you measure human content.

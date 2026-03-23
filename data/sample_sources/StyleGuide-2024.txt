@@ -1,0 +1,59 @@
+BRIDGE PARTNERS — CONTENT STYLE GUIDE 2024
+==========================================
+
+BRAND VOICE
+-----------
+Bridge Partners writes in a confident, direct, and human tone.
+We are experts, but we never talk down to our audience.
+We use plain English over jargon wherever possible.
+We are precise: say exactly what you mean in as few words as needed.
+
+TONE GUIDELINES
+---------------
+- Professional but approachable — not stiff or corporate.
+- Use "you" and "we" to create a conversational feel.
+- Avoid passive voice. Prefer active constructions.
+- Short sentences land harder. Use them for key points.
+- Longer sentences are fine for context and nuance.
+
+HEADINGS
+--------
+- Title Case for H1 and H2 headings.
+- Sentence case for H3 and below.
+- Headings should describe the value the reader gets, not just the topic.
+  Good: "How to Cut Report Time in Half"
+  Avoid: "Reporting Methodology"
+
+TERMINOLOGY
+-----------
+- Use "AI agent" not "bot" or "chatbot" for autonomous systems.
+- Use "workflow" not "process flow" in client-facing content.
+- Capitalize "AI" always. Never "A.I." or "Ai."
+- "Data" is plural: "data are" not "data is" in formal writing.
+- Refer to the reader's organization as "your team" not "the organization."
+
+FORMATTING RULES
+----------------
+- Bullet lists: 3–7 items max. More than 7 means split into sections.
+- Bold for the most important word or phrase in a sentence, not whole sentences.
+- Avoid underlining — it looks like a hyperlink.
+- Oxford comma is required: "strategy, execution, and measurement."
+- Numbers: spell out one through nine; use numerals for 10 and above.
+- Percentages: always use the % symbol with a numeral (e.g., 42%).
+
+E-BOOK SPECIFIC RULES
+---------------------
+- Chapter titles should be action-oriented or question-based.
+  Good: "Building Your First AI Governance Policy"
+  Avoid: "AI Governance Overview"
+- Each chapter should open with a 2–3 sentence hook — a story, stat, or bold claim.
+- Include at least one concrete example per major section.
+- End every chapter with a "Key Takeaways" box of 3–5 bullets.
+- Avoid ending a chapter on a question — end on a forward-looking statement.
+
+WHAT TO AVOID
+-------------
+- Buzzwords without meaning: "synergy," "leverage" (as a verb), "paradigm shift."
+- Hedging language: "kind of," "sort of," "maybe," "it might be argued."
+- Walls of text — break up paragraphs every 3–4 sentences.
+- Starting consecutive sentences with "The."

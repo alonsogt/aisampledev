@@ -10,3 +10,7 @@ agent-runtime-sample_output_*.txt
 agent-runtime-sample_output.pptx
 agent-runtime-sample_output.pdf
 
+# Secrets — never commit
+.env
+data/latest_index.json
+

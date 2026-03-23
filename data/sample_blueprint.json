@@ -1,0 +1,64 @@
+{
+  "version": "2.0",
+  "brief": {
+    "what": "Generate professional e-books for Bridge Partners clients. The agent takes a topic and a questionnaire intake, then produces a structured, on-brand e-book draft (outline + chapters) grounded in client-provided reference documents and SME interviews.",
+    "who": "Content strategists, marketing managers, and subject matter experts at mid-market professional services firms. Non-technical users who need publication-ready drafts, not raw AI output.",
+    "never": "Do not fabricate statistics, client names, or case study outcomes. Do not use informal language, slang, or passive voice. Do not produce content without grounding it in the provided reference sources.",
+    "success": "A complete e-book draft (outline + all chapters) is produced in under 10 minutes. The draft passes brand voice review without major rewrites. All factual claims are traceable to provided sources.",
+    "model": "gpt-4o",
+    "notes": "Sample blueprint using local reference files for RAG testing. Replace source URLs with real SharePoint links when deploying to production."
+  },
+  "sections": [
+    {
+      "id": "grounding",
+      "name": "Grounding Knowledge Sources",
+      "items": [
+        {
+          "id": "g1",
+          "name": "Style Guide 2024",
+          "desc": "Brand voice, tone, formatting rules, and terminology standards",
+          "status": "done",
+          "owner": "Alonso",
+          "notes": "local://data/sample_sources/StyleGuide-2024.txt",
+          "promptBody": ""
+        },
+        {
+          "id": "g2",
+          "name": "E-Book Example 1 — Modern AI Stack",
+          "desc": "Full example e-book for a technology audience",
+          "status": "done",
+          "owner": "Alonso",
+          "notes": "local://data/sample_sources/EBook-Example-1.txt",
+          "promptBody": ""
+        },
+        {
+          "id": "g3",
+          "name": "E-Book Example 2 — AI for Content Teams",
+          "desc": "Full example e-book for content managers",
+          "status": "done",
+          "owner": "Alonso",
+          "notes": "local://data/sample_sources/EBook-Example-2.txt",
+          "promptBody": ""
+        },
+        {
+          "id": "g4",
+          "name": "SME Interview Transcript",
+          "desc": "Interview with content director on AI adoption",
+          "status": "done",
+          "owner": "Alonso",
+          "notes": "local://data/sample_sources/SME-Transcript-1.txt",
+          "promptBody": ""
+        },
+        {
+          "id": "g5",
+          "name": "Industry Benchmarks Reference",
+          "desc": "AI content benchmarks, stats, and implementation guidance",
+          "status": "done",
+          "owner": "Alonso",
+          "notes": "local://data/sample_sources/Generic-Reference.txt",
+          "promptBody": ""
+        }
+      ]
+    }
+  ]
+}

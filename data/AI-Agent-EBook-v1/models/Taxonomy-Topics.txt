@@ -1,0 +1,53 @@
+EBOOK TOPIC TAXONOMY — BRIDGE PARTNERS AI PRACTICE
+====================================================
+
+TIER 1: PRIMARY TOPIC AREAS
+-----------------------------
+These are the main categories our ebooks cover.
+
+1. AI Strategy & Governance
+   Subtopics: use case selection, ROI frameworks, governance policies,
+   risk management, ethical AI, compliance, change management
+
+2. AI for Content & Marketing
+   Subtopics: content generation, brand consistency, prompt engineering,
+   workflow automation, personalization, SEO with AI, creative AI tools
+
+3. AI for Operations
+   Subtopics: process automation, intelligent document processing,
+   data pipelines, workflow orchestration, RPA + AI, cost reduction
+
+4. AI for Customer Experience
+   Subtopics: conversational AI, chatbots, personalization engines,
+   sentiment analysis, support automation, voice AI
+
+5. AI Architecture & Engineering
+   Subtopics: model selection, RAG systems, fine-tuning, MLOps,
+   vector databases, AI infrastructure, LLM deployment
+
+TIER 2: AUDIENCE SEGMENTS
+--------------------------
+Match content depth and vocabulary to the primary audience.
+
+Executive (C-suite, VP):
+- Focus: strategy, ROI, risk, competitive advantage
+- Avoid: technical implementation details
+- Length: shorter chapters, more frameworks and summaries
+
+Manager (Director, Sr. Manager):
+- Focus: implementation planning, team enablement, vendor selection
+- Balance: strategic context + practical how-to
+- Length: standard chapter length
+
+Practitioner (Analyst, Engineer, Specialist):
+- Focus: how-to, tools, code patterns, technical depth
+- Include: specific tools, workflows, technical examples
+- Length: can go longer with more detail
+
+TIER 2: CONTENT FORMATS BY USE CASE
+-------------------------------------
+Thought Leadership:     opinion + framework + evidence. No how-to steps.
+Practical Guide:        step-by-step. Include templates, checklists.
+Case Study:             problem → approach → outcome. Use real numbers.
+Reference / Playbook:   comprehensive. Designed to be bookmarked.
+Quick-Start Guide:      minimal. 5 steps. Get to value in 30 minutes.

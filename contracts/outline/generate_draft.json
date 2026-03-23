@@ -13,7 +13,8 @@
     "passages": [
       { "title": "string", "url": "string", "snippet": "string", "score": "number" }
     ],
-    "brief": { "what": "string", "who": "string", "never": "string", "success": "string" }
+    "brief": { "what": "string", "who": "string", "never": "string", "success": "string" },
+    "preferences": { "type": "object", "description": "questionnaire-derived preferences: style, tone, audience, structure" }
   },
   "outputs": {
     "draft": {
