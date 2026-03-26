@@ -1,43 +1,81 @@
-# Agent Runtime Sample (Developer Starter)
+# Agent Runtime Sample
 
-This folder is a **sample runtime implementation** for the Blueprint JSON v2.0 you maintain in the tracker app.
+Azure AI Foundry deployment scripts, flow definitions, and services.
+Everything here runs on Azure — no local servers, no ngrok.
 
-It is intentionally **small, stubby, and contract-driven**:
-- Each Python file contains a function that returns data in the exact shape described by the corresponding `contracts/*` file.
-- Junior/low-code developers should implement the `TODO:` blocks, then set the related blueprint item `status` to `done`.
+## What's deployed to Azure
 
-## How to use
+| Component | Where | What it does |
+|---|---|---|
+| `ebook-writer-agent` | Azure AI Foundry | Generates outlines and drafts, grounded in SharePoint |
+| `ebook-intake-agent` | Azure AI Foundry | Conversationally collects topic, audience, tone, chapters |
+| `ebook-conversation-flow` | Azure AI Foundry Workflow | Full conversation: questions → outline → approval → draft |
+| `ebook-generate` | Azure AI Foundry Workflow | Sequential: outline then draft (no questions) |
 
-1. Copy this folder into your runtime repo (or keep it as your runtime repo).
-2. Implement the TODOs in:
-   - `pipelines/*`
-   - `connectors/*`
-   - `services/*`
-   - `flows/*`
-   - `ui/screens/*`
-3. Run the v1 eBook “hello world” locally from inside this folder:
+## Folder structure
 
-```bash
-cd agent-runtime-sample
-python run_ebook_v1.py
+```
+agent-runtime-sample/
+  scripts/                  Deploy scripts — run once to set up Azure resources
+    deploy_foundry_workflow.py          Deploy ebook-generate workflow
+    deploy_ebook_conversation_workflow.py  Deploy ebook-conversation-flow to Foundry
+    ebook-conversation-flow.yaml        Copy of / reference for Foundry workflow YAML (deploy script is canonical)
+    create_foundry_agent.py             Create agents in Foundry
+    setup_foundry_knowledge.py          Set up Foundry Knowledge (AI Search)
+
+  flows/                    See flows/README.md — two different “flow” concepts
+    ebook-flow.yaml         LOCAL ONLY: Python flow_engine / local-webagent (not Foundry)
+    NEW-FLOW-TEMPLATE.yaml  Blank template for local flow_engine YAML
+    README.md               Where the production flow lives (Foundry vs local YAML)
+    HOW_TO_BUILD_A_FLOW.md  Guide for local flow_engine YAML
+
+  services/                 Python services (used by deploy scripts)
+    flow/flow_engine.py     YAML flow engine
+    ingestion/              Document chunking + ingestion
+    retrieval/              Passage retrieval
+    outline/                Outline + draft generation
+    logic/                  Branching, validation, fallback
+
+  llm/                      Azure AI clients
+    foundry_client.py       AIProjectClient wrapper
+    azure_openai_http.py    Direct Azure OpenAI HTTP calls
+
+  connectors/
+    sharepoint.py           SharePoint document connector
+
+  data/                     Grounding documents (uploaded to SharePoint/Foundry)
+    AI-Agent-EBook-v1/      Brand guidelines, examples, research
+
+  contracts/                JSON schemas for each service interface
 ```
 
-## Runtime expectations (v1)
-
-For the “eBook v1” scenario, your blueprint should describe this pipeline:
-1. Retrieval (`services/retrieval/get_passages.py`)
-2. Outline + draft generation (see:
-   - `services/outline/generate_outline.py` (optional stub)
-   - `services/outline/generate_draft.py` (used by blueprint step contract))
-3. Docx output generation (`services/output/create_docx.py`)
-
-If your contracts differ, update code to match contracts in `contracts/*`.
-
-## Notes on dependencies
-
-This sample uses Python’s standard library only. If you want real `.docx` output, install `python-docx`:
+## Run deploy scripts
 
 ```bash
-pip install python-docx
+# Set up your .env (copy from .env.example, fill in Azure credentials)
+# Then deploy agents and workflows to Foundry:
+
+pip install -r requirements.txt
+az login
+
+python scripts/deploy_foundry_workflow.py
+python scripts/deploy_ebook_conversation_workflow.py
 ```
 
+## Architecture
+
+```
+Azure Static Web Apps (index.html)
+         |
+Azure Functions (api/chat)
+         |
+Azure AI Foundry (ebook-conversation-flow)
+         |
+ebook-intake-agent + ebook-writer-agent
+         |
+SharePoint (grounding knowledge)
+```
+
+## Local development
+
+See `../local-webagent/` for local dev tools (FastAPI + uvicorn + ngrok for Teams testing).

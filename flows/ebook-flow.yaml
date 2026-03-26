@@ -1,0 +1,135 @@
+# ebook-flow.yaml
+# ─────────────────────────────────────────────────────────────
+# LOCAL PYTHON FLOW ENGINE ONLY — not Azure AI Foundry
+#
+# Production (Static Web App) uses Foundry workflow "ebook-conversation-flow"
+# in the cloud. That definition is deployed via
+#   scripts/deploy_ebook_conversation_workflow.py
+# and is edited in Foundry or in that script — NOT in this file.
+#
+# This YAML is read by services/flow/flow_engine.py (local-webagent / Teams).
+# See flows/README.md and HOW_TO_BUILD_A_FLOW.md.
+# ─────────────────────────────────────────────────────────────
+
+name: EBook Generator
+description: Guides a user through creating a professional ebook grounded in company knowledge sources
+version: "1.0"
+
+steps:
+
+  - id: topic
+    type: ask
+    question: "What topic should the ebook cover?"
+    hint: "e.g. AI for HR teams, Digital Transformation for SMEs, Cybersecurity for Mid-Market"
+    save_as: topic
+
+
+  - id: audience
+    type: ask
+    question: "Who is the target audience?"
+    options:
+      - HR managers
+      - Content and marketing teams
+      - Executives and C-suite
+      - IT leaders and architects
+      - Other (describe in next step)
+    save_as: audience
+
+  - id: audience_detail
+    type: ask
+    question: "Any more detail about the audience? (press Enter to skip)"
+    hint: "e.g. mid-market companies, US-based, non-technical"
+    save_as: audience_detail
+    optional: true
+
+  - id: tone
+    type: ask
+    question: "What tone should the ebook use?"
+    options:
+      - Professional and authoritative
+      - Conversational and approachable
+      - Technical and detailed
+      - Executive — short, punchy, no fluff
+    save_as: tone
+
+  - id: chapters
+    type: ask
+    question: "How many chapters?"
+    options:
+      - "4 — short guide"
+      - "6 — standard ebook"
+      - "8 — comprehensive playbook"
+    save_as: chapters
+    default: "6 — standard ebook"
+
+  - id: generate_outline
+    type: generate
+    action: outline
+    message: "Got it! Generating your outline using {sources_count} knowledge sources. This takes about 15 seconds..."
+    on_complete:
+      show: outline
+      next: approve_outline
+
+  - id: approve_outline
+    type: approve
+    question: "Here's your outline. What would you like to do?"
+    options:
+      - id: approve
+        label: "Looks great — write the full draft"
+        next: generate_draft
+      - id: regenerate
+        label: "Try a different outline"
+        next: generate_outline
+      - id: edit
+        label: "I want to change something"
+        next: outline_feedback
+
+  - id: outline_feedback
+    type: ask
+    question: "What would you like to change about the outline?"
+    hint: "e.g. Add a chapter on compliance, make it more practical, remove the intro chapter"
+    save_as: outline_feedback
+    next: generate_outline
+
+  - id: generate_draft
+    type: generate
+    action: draft
+    message: "Writing your full draft now. This takes about 30 seconds..."
+    on_complete:
+      show: draft_preview
+      next: approve_draft
+
+  - id: approve_draft
+    type: approve
+    question: "Your draft is ready! What would you like to do?"
+    options:
+      - id: download
+        label: "Download the full draft"
+        next: output
+      - id: edit_chapter
+        label: "Edit a specific chapter"
+        next: chapter_feedback
+      - id: change_tone
+        label: "Rewrite in a different tone"
+        next: tone
+      - id: restart
+        label: "Start over with a new topic"
+        next: topic
+
+  - id: chapter_feedback
+    type: ask
+    question: "Which chapter and what should change?"
+    hint: "e.g. Chapter 3 — make it shorter and add a checklist at the end"
+    save_as: chapter_feedback
+    next: generate_draft
+
+  - id: output
+    type: output
+    message: "Your ebook is ready!"
+    actions:
+      - id: download_txt
+        label: "Download as text file"
+      - id: copy
+        label: "Copy full draft to clipboard"
+      - id: restart
+        label: "Generate another ebook"
