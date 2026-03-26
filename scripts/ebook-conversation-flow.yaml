@@ -19,37 +19,37 @@ trigger:
 
 actions:
 
-  # Step 1 — Collect topic (free text)
+  # Step 1 — Open question (examples are hints only)
   - kind: Question
     id: ask-topic
     variable: Local.Topic
     entity: StringPrebuiltEntity
     skipQuestionMode: SkipOnFirstExecutionIfVariableHasValue
-    prompt: "What topic should the ebook cover? (e.g. AI for HR teams, Digital Transformation for SMEs)"
+    prompt: "What topic should the ebook cover? Answer in your own words. Examples you might use: AI for HR, digital transformation, cybersecurity — or anything else."
 
-  # Step 2 — Collect audience
+  # Step 2 — Open question
   - kind: Question
     id: ask-audience
     variable: Local.Audience
     entity: StringPrebuiltEntity
     skipQuestionMode: SkipOnFirstExecutionIfVariableHasValue
-    prompt: "Who is the target audience? (HR managers / Content and marketing teams / Executives and C-suite / IT leaders / General business professionals)"
+    prompt: "Who is the target audience? Describe them freely — roles, departments, industry, or customer type. Examples: HR leaders, marketing, executives, IT; not limited to those."
 
-  # Step 3 — Collect tone
+  # Step 3 — Open question
   - kind: Question
     id: ask-tone
     variable: Local.Tone
     entity: StringPrebuiltEntity
     skipQuestionMode: SkipOnFirstExecutionIfVariableHasValue
-    prompt: "What tone should the ebook use? (Professional and clear / Conversational and approachable / Technical and detailed / Motivational and inspiring)"
+    prompt: "What tone or writing style do you want? Say what you prefer — e.g. professional, conversational, technical, motivational, or mix your own description."
 
-  # Step 4 — Collect chapter count
+  # Step 4 — Open question
   - kind: Question
     id: ask-chapters
     variable: Local.Chapters
     entity: StringPrebuiltEntity
     skipQuestionMode: SkipOnFirstExecutionIfVariableHasValue
-    prompt: "How many chapters? (3 — short guide / 6 — standard ebook / 9 — comprehensive)"
+    prompt: "How long should the ebook be? Reply with a number of chapters (e.g. 3, 6, 9) or describe it (short guide, standard, comprehensive) — your choice."
 
   # Step 5 — Generate outline via ebook-writer-agent (SharePoint-grounded)
   - kind: InvokeAzureAgent
@@ -69,7 +69,7 @@ actions:
     variable: Local.Approval
     entity: StringPrebuiltEntity
     skipQuestionMode: SkipOnFirstExecutionIfVariableHasValue
-    prompt: =Concatenate(Text(Last(Local.OutlineResult)), " — Does this outline look good? (yes / no)")
+    prompt: =Concatenate(Text(Last(Local.OutlineResult)), " — Does this outline work for you? Reply yes to generate the full draft, or no to start over.")
 
   # Step 7 — Branch on approval
   - kind: ConditionGroup
