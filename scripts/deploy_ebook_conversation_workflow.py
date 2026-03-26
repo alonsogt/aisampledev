@@ -29,12 +29,23 @@ for line in (ROOT / ".env").read_text().splitlines():
         k, v = line.split("=", 1)
         os.environ.setdefault(k.strip(), v.strip())
 
-from azure.identity import DefaultAzureCredential
 from azure.ai.projects import AIProjectClient
 
 ENDPOINT = os.environ["AZURE_FOUNDRY_ENDPOINT"]
 
-client = AIProjectClient(endpoint=ENDPOINT, credential=DefaultAzureCredential())
+# Local deploy: browser login (no Azure CLI required). CI: set AZURE_USE_BROWSER_LOGIN=0 and use DefaultAzureCredential.
+if os.environ.get("AZURE_USE_BROWSER_LOGIN", "1").strip().lower() in ("0", "false", "no"):
+    from azure.identity import DefaultAzureCredential
+
+    _credential = DefaultAzureCredential()
+else:
+    from azure.identity import InteractiveBrowserCredential
+
+    _credential = InteractiveBrowserCredential(
+        tenant_id=os.environ.get("AZURE_TENANT_ID", "common"),
+    )
+
+client = AIProjectClient(endpoint=ENDPOINT, credential=_credential)
 
 # ── Full conversational workflow YAML ─────────────────────────────────────────
 #
