@@ -1,0 +1,80 @@
+# EBook Conversation Workflow — Azure AI Foundry
+#
+# This YAML is the full target design of the workflow.
+# The 3-step base (intake → outline → draft) is deployed via deploy_ebook_conversation_workflow.py
+# The approval if/else loop must be added in the Foundry portal visual editor.
+#
+# How to open in portal:
+#   Foundry portal -> Build -> Workflows -> ebook-conversation-flow -> YAML button
+#
+# ── What the workflow does ───────────────────────────────────────────────────
+#   Step 1  ebook-intake-agent    Asks user for topic, audience, tone, chapters
+#           (multi-turn conversation, returns structured JSON when done)
+#
+#   Step 2  ebook-writer-agent    Generates chapter outline from the JSON answers
+#           (sends outline back to user)
+#
+#   Step 3  Ask a question        "Does this look good?" (add via portal)
+#           yes -> step 4
+#           no  -> go back to step 1
+#
+#   Step 4  ebook-writer-agent    Expands outline into full written draft
+#           (sends final ebook to user)
+#
+# ── Deployed (works via API) ─────────────────────────────────────────────────
+kind: workflow
+name: ebook-conversation-flow
+trigger:
+  kind: OnConversationStart
+  id: trigger_wf
+  actions:
+    - kind: InvokeAzureAgent
+      id: intake
+      agent:
+        name: ebook-intake-agent
+      description: Collect topic, audience, tone and chapter count from user
+      conversationId: =System.ConversationId
+      input:
+        messages: =System.LastMessage
+      output:
+        messages: Local.IntakeResult
+        autoSend: false
+
+    - kind: InvokeAzureAgent
+      id: outline
+      agent:
+        name: ebook-writer-agent
+      description: Generate structured ebook outline from intake answers
+      conversationId: =System.ConversationId
+      input:
+        messages: =Local.IntakeResult
+      output:
+        messages: Local.OutlineResult
+        autoSend: false
+
+    # ── ADD VIA PORTAL VISUAL EDITOR ─────────────────────────────────────────
+    # After deploying, open this workflow in the Foundry portal and add:
+    #
+    # Node A: "Ask a question"
+    #   - Question text: "Does this outline look good? (Yes / No)"
+    #   - Save answer to: Local.Approval
+    #
+    # Node B: "if/else" (Logic node)
+    #   - Condition: Local.Approval starts with "Yes"
+    #     - TRUE branch:  InvokeAzureAgent -> ebook-writer-agent
+    #                     input: =Local.OutlineResult
+    #                     output: Local.DraftResult, autoSend: true
+    #     - FALSE branch: Go to -> intake  (restarts the flow)
+    # ─────────────────────────────────────────────────────────────────────────
+
+    - kind: InvokeAzureAgent
+      id: draft
+      agent:
+        name: ebook-writer-agent
+      description: Expand outline into full written ebook draft
+      conversationId: =System.ConversationId
+      input:
+        messages: =Local.OutlineResult
+      output:
+        messages: Local.DraftResult
+        autoSend: true
