@@ -73,40 +73,88 @@ name: ebook-conversation-flow
 trigger:
   kind: OnConversationStart
   id: trigger_wf
-  actions:
-    - kind: InvokeAzureAgent
-      id: intake
-      agent:
-        name: ebook-intake-agent
-      description: Collect topic, audience, tone and chapter count from user
-      conversationId: =System.ConversationId
-      input:
-        messages: =System.LastMessage
-      output:
-        messages: Local.IntakeResult
-        autoSend: false
-    - kind: InvokeAzureAgent
-      id: outline
-      agent:
-        name: ebook-writer-agent
-      description: Generate structured ebook outline from intake answers
-      conversationId: =System.ConversationId
-      input:
-        messages: =Local.IntakeResult
-      output:
-        messages: Local.OutlineResult
-        autoSend: false
-    - kind: InvokeAzureAgent
-      id: draft
-      agent:
-        name: ebook-writer-agent
-      description: Expand outline into full written ebook draft
-      conversationId: =System.ConversationId
-      input:
-        messages: =Local.OutlineResult
-      output:
-        messages: Local.DraftResult
-        autoSend: true
+
+actions:
+
+  # 1. Collect topic (free text)
+  - kind: Question
+    id: ask-topic
+    variable: Local.Topic
+    entity: StringPrebuiltEntity
+    skipQuestionMode: SkipOnFirstExecutionIfVariableHasValue
+    prompt: "What topic should the ebook cover? (e.g. AI for HR teams, Digital Transformation for SMEs)"
+
+  # 2. Collect audience (choice)
+  - kind: Question
+    id: ask-audience
+    variable: Local.Audience
+    entity: StringPrebuiltEntity
+    skipQuestionMode: SkipOnFirstExecutionIfVariableHasValue
+    prompt: "Who is the target audience? (HR managers / Content and marketing teams / Executives and C-suite / IT leaders / General business professionals)"
+
+  # 3. Collect tone (choice)
+  - kind: Question
+    id: ask-tone
+    variable: Local.Tone
+    entity: StringPrebuiltEntity
+    skipQuestionMode: SkipOnFirstExecutionIfVariableHasValue
+    prompt: "What tone should the ebook use? (Professional and clear / Conversational and approachable / Technical and detailed / Motivational and inspiring)"
+
+  # 4. Collect chapter count (choice)
+  - kind: Question
+    id: ask-chapters
+    variable: Local.Chapters
+    entity: StringPrebuiltEntity
+    skipQuestionMode: SkipOnFirstExecutionIfVariableHasValue
+    prompt: "How many chapters? (3 — short guide / 6 — standard ebook / 9 — comprehensive)"
+
+  # 5. Generate outline using ebook-writer-agent
+  - kind: InvokeAzureAgent
+    id: generate-outline
+    agent:
+      name: ebook-writer-agent
+    conversationId: =System.ConversationId
+    input:
+      messages: =Concatenate("Generate a structured ebook outline. Topic: ", Local.Topic, " | Audience: ", Local.Audience, " | Tone: ", Local.Tone, " | Chapters: ", Local.Chapters)
+    output:
+      messages: Local.OutlineResult
+      autoSend: false
+
+  # 6. Show outline and ask for approval
+  - kind: Question
+    id: ask-approval
+    variable: Local.Approval
+    entity: StringPrebuiltEntity
+    skipQuestionMode: SkipOnFirstExecutionIfVariableHasValue
+    prompt: =Concatenate(Text(Last(Local.OutlineResult)), " — Does this outline look good? (yes / no)")
+
+  # 7. Branch: approved or start over
+  - kind: ConditionGroup
+    id: approval-branch
+    conditions:
+
+      # Approved — generate full draft
+      - id: if-approved
+        condition: =!IsBlank(Find("yes", Lower(Local.Approval)))
+        actions:
+          - kind: InvokeAzureAgent
+            id: generate-draft
+            agent:
+              name: ebook-writer-agent
+            conversationId: =System.ConversationId
+            input:
+              messages: =Last(Local.OutlineResult)
+            output:
+              messages: Local.DraftResult
+              autoSend: true
+          - kind: EndConversation
+            id: end-success
+
+    # Not approved — restart from topic question
+    elseActions:
+      - kind: GotoAction
+        id: restart
+        actionId: ask-topic
 """
 
 # ── Create intake agent ───────────────────────────────────────────────────────
