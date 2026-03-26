@@ -12,6 +12,8 @@ Everything here runs on Azure — no local servers, no ngrok.
 | `ebook-conversation-flow` | Azure AI Foundry Workflow | Full conversation: questions → outline → approval → draft |
 | `ebook-generate` | Azure AI Foundry Workflow | Sequential: outline then draft (no questions) |
 
+**Foundry vs local YAML:** The hosted app calls **`ebook-conversation-flow`** in Foundry (authoritative: portal or `scripts/deploy_ebook_conversation_workflow.py`). Files in `flows/` are **not** that workflow — they feed the local `flow_engine.py` used by `../local-webagent/`.
+
 ## Folder structure
 
 ```
@@ -23,11 +25,10 @@ agent-runtime-sample/
     create_foundry_agent.py             Create agents in Foundry
     setup_foundry_knowledge.py          Set up Foundry Knowledge (AI Search)
 
-  flows/                    See flows/README.md — two different “flow” concepts
-    ebook-flow.yaml         LOCAL ONLY: Python flow_engine / local-webagent (not Foundry)
-    NEW-FLOW-TEMPLATE.yaml  Blank template for local flow_engine YAML
-    README.md               Where the production flow lives (Foundry vs local YAML)
-    HOW_TO_BUILD_A_FLOW.md  Guide for local flow_engine YAML
+  flows/
+    ebook-flow.yaml         LOCAL ONLY: flow_engine + local-webagent (not Foundry)
+    NEW-FLOW-TEMPLATE.yaml  Template for local flow_engine YAML
+    HOW_TO_BUILD_A_FLOW.md  Short guide for local YAML step types
 
   services/                 Python services (used by deploy scripts)
     flow/flow_engine.py     YAML flow engine

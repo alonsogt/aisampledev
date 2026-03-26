@@ -8,7 +8,7 @@
 # and is edited in Foundry or in that script — NOT in this file.
 #
 # This YAML is read by services/flow/flow_engine.py (local-webagent / Teams).
-# See flows/README.md and HOW_TO_BUILD_A_FLOW.md.
+# See HOW_TO_BUILD_A_FLOW.md and agent-runtime-sample/README.md (Flows).
 # ─────────────────────────────────────────────────────────────
 
 name: EBook Generator

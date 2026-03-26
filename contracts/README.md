@@ -1,10 +1,31 @@
 # Contracts
 
-These files document the expected input/output shape for each step in the v1 “eBook” pipeline.
+Expected input/output shapes for pipeline steps. Blueprint `Notes` can reference these paths, e.g. `contract: repo=agent-runtime path=contracts/output/create_docx.json`.
 
-In your blueprint item `Notes / Links`, you should point `code:` and `contract:` to these paths, for example:
-- `code: repo=agent-runtime path=services/output/create_docx.py`
-- `contract: repo=agent-runtime path=contracts/output/create_docx.json`
+---
 
-In this sample repo, the Python code is stubbed but the shapes are the “source of truth”.
+## Connector: `sharepoint_source` (v1)
 
+Matches `connectors/sharepoint.py`.
+
+**Purpose:** List SharePoint documents for ingestion.
+
+**Outputs per item:** `file_id`, `url`, `filename`, `mime_type`, `last_modified` (ISO). v1 may return `[]`.
+
+---
+
+## Ingestion: `ingest_ebooks` (v1)
+
+**Purpose:** Ingest documents and prepare for retrieval.
+
+**Inputs:** SharePoint folder(s) + file types; optional `index_name` (default `ebooks_index`).
+
+**Outputs:** `vectorIndex.indexName`, `docId` schema (conceptual). v1 may stub.
+
+---
+
+## Logic: completion criteria
+
+**Purpose:** Define “done” after drafting/review.
+
+**Inputs:** `draft`, optional rubric results. **Outputs:** `done` or `needs_review`. v1 may be a placeholder.

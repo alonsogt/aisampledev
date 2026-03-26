@@ -1,8 +1,8 @@
 # How to Build a New Agent Flow
 
 > **Where does the *production* flow live?**  
-> On **Azure AI Foundry**, as the workflow **`ebook-conversation-flow`**.  
-> This guide describes the **local** YAML format used by `flow_engine.py` (`ebook-flow.yaml`), which powers **local** samples (e.g. Teams bot). It is **not** the Foundry workflow format. For Foundry, edit the workflow in the Foundry portal or use `scripts/deploy_ebook_conversation_workflow.py`. See **`flows/README.md`**.
+> On **Azure AI Foundry** as **`ebook-conversation-flow`**.  
+> This file describes the **local** YAML format for `flow_engine.py` only (e.g. Teams bot). For Foundry, use the portal or `scripts/deploy_ebook_conversation_workflow.py`.
 
 ### Local flow engine only: edit the YAML, restart the server — done.
 
@@ -111,69 +111,6 @@ Every step runs in order by default. To jump to a specific step, add `next:`:
 ```
 
 You can jump forward, backward, or to any step by its `id`.
-
----
-
-## Full Example — IT Support Ticket Triage
-
-Here's a complete flow for a different use case to show it's reusable:
-
-```yaml
-name: IT Support Triage
-description: Helps employees submit and prioritize IT support tickets
-
-steps:
-
-  - id: issue_type
-    type: ask
-    question: "What kind of issue are you having?"
-    options:
-      - Hardware problem
-      - Software / application issue
-      - Access / permissions
-      - Network or VPN
-      - Something else
-    save_as: issue_type
-
-  - id: urgency
-    type: ask
-    question: "How urgent is this?"
-    options:
-      - Critical — blocking my work completely
-      - High — major slowdown
-      - Medium — can still work around it
-      - Low — when you get a chance
-    save_as: urgency
-
-  - id: description
-    type: ask
-    question: "Describe the issue in a few sentences."
-    hint: "e.g. My laptop won't connect to the VPN since the update yesterday"
-    save_as: description
-
-  - id: generate_ticket
-    type: generate
-    action: outline
-    message: "Creating your ticket summary..."
-    on_complete:
-      show: outline
-      next: confirm_ticket
-
-  - id: confirm_ticket
-    type: approve
-    question: "Here is your ticket summary. Ready to submit?"
-    options:
-      - id: submit
-        label: "Submit the ticket"
-        next: done
-      - id: edit
-        label: "Change something"
-        next: description
-
-  - id: done
-    type: output
-    message: "Your ticket has been submitted. You'll receive a confirmation email."
-```
 
 ---
 

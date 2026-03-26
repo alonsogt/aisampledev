@@ -5,7 +5,7 @@ def list_sharepoint_files(source_spec: Dict[str, Any]) -> List[Dict[str, Any]]:
     """
     Stub connector for SharePoint-like sources.
 
-    TODO contract doc: see contracts/sharepoint_source.md
+    Contract summary: see contracts/README.md (Connector: sharepoint_source)
 
     Expected output items should include:
       - file_id
